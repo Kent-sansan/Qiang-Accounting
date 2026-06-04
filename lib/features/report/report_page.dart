@@ -165,7 +165,7 @@ class _Stat extends StatelessWidget {
 }
 
 class _TrendChart extends StatelessWidget {
-  final List<Record> records;
+  final List<JzRecord> records;
   const _TrendChart({required this.records});
 
   @override
@@ -218,7 +218,7 @@ class _TrendChart extends StatelessWidget {
 }
 
 class _CategoryBreakdown extends StatelessWidget {
-  final List<Record> records;
+  final List<JzRecord> records;
   const _CategoryBreakdown({required this.records});
 
   @override

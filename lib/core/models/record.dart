@@ -1,4 +1,4 @@
-class Record {
+class JzRecord {
   final String id;
   final RecordType type;
   final String category;
@@ -7,7 +7,7 @@ class Record {
   final String? note;
   final DateTime date;
 
-  Record({
+  JzRecord({
     required this.id,
     required this.type,
     required this.category,
@@ -27,7 +27,7 @@ class Record {
     'date': date.toIso8601String(),
   };
 
-  factory Record.fromJson(Map<String, dynamic> json) => Record(
+  factory JzRecord.fromJson(Map<String, dynamic> json) => JzRecord(
     id: json['id'],
     type: RecordType.values.byName(json['type']),
     category: json['category'],
@@ -37,7 +37,7 @@ class Record {
     date: DateTime.parse(json['date']),
   );
 
-  Record copyWith({
+  JzRecord copyWith({
     String? id,
     RecordType? type,
     String? category,
@@ -45,7 +45,7 @@ class Record {
     double? amount,
     String? note,
     DateTime? date,
-  }) => Record(
+  }) => JzRecord(
     id: id ?? this.id,
     type: type ?? this.type,
     category: category ?? this.category,

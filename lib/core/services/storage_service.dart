@@ -15,14 +15,14 @@ class StorageService {
   }
 
   // Records
-  Future<List<Record>> loadRecords() async {
+  Future<List<JzRecord>> loadRecords() async {
     final raw = _prefs.getString(_keyRecords);
     if (raw == null) return [];
     final list = jsonDecode(raw) as List;
-    return list.map((r) => Record.fromJson(r)).toList();
+    return list.map((r) => JzRecord.fromJson(r)).toList();
   }
 
-  Future<void> saveRecords(List<Record> records) async {
+  Future<void> saveRecords(List<JzRecord> records) async {
     final raw = jsonEncode(records.map((r) => r.toJson()).toList());
     await _prefs.setString(_keyRecords, raw);
   }

@@ -138,7 +138,7 @@ class _QuickActions extends StatelessWidget {
 }
 
 class _RecordList extends StatelessWidget {
-  final List<Record> records;
+  final List<JzRecord> records;
   const _RecordList({required this.records});
 
   @override
@@ -154,7 +154,7 @@ class _RecordList extends StatelessWidget {
       );
     }
 
-    final grouped = <String, List<Record>>{};
+    final grouped = <String, List<JzRecord>>{};
     for (final r in records) {
       final key = DateFormat('yyyy-MM-dd').format(r.date);
       grouped.putIfAbsent(key, () => []).add(r);
@@ -193,7 +193,7 @@ class _RecordList extends StatelessWidget {
 }
 
 class _RecordTile extends StatelessWidget {
-  final Record record;
+  final JzRecord record;
   const _RecordTile({required this.record});
 
   @override

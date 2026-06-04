@@ -6,11 +6,11 @@ import '../services/storage_service.dart';
 class AppProvider extends ChangeNotifier {
   final _storage = StorageService();
 
-  List<Record> _records = [];
+  List<JzRecord> _records = [];
   List<Asset> _assets = [];
   String _themeName = 'auto';
 
-  List<Record> get records => _records;
+  List<JzRecord> get records => _records;
   List<Asset> get assets => _assets;
 
   ThemeMode get themeMode {
@@ -30,14 +30,14 @@ class AppProvider extends ChangeNotifier {
   }
 
   // Records
-  Future<void> addRecord(Record record) async {
+  Future<void> addRecord(JzRecord record) async {
     _records.insert(0, record);
     _records.sort((a, b) => b.date.compareTo(a.date));
     await _storage.saveRecords(_records);
     notifyListeners();
   }
 
-  Future<void> updateRecord(Record record) async {
+  Future<void> updateRecord(JzRecord record) async {
     final idx = _records.indexWhere((r) => r.id == record.id);
     if (idx >= 0) {
       _records[idx] = record;
