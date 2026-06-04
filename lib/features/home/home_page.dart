@@ -129,8 +129,8 @@ class _QuickActions extends StatelessWidget {
         const SizedBox(width: 12),
         Expanded(child: OutlinedButton.icon(
           onPressed: () {},
-          icon: const Icon(Icons.arrow_downward, size: 18, color: AppTheme.income),
-          label: const Text('收入', style: TextStyle(color: AppTheme.income)),
+          icon: Icon(Icons.arrow_downward, size: 18, color: AppTheme.income),
+          label: Text('收入', style: TextStyle(color: AppTheme.income)),
         )),
       ],
     );

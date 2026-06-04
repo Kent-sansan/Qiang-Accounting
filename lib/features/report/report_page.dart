@@ -195,8 +195,8 @@ class _TrendChart extends StatelessWidget {
                   maxY: 20000,
                   barGroups: bars.asMap().entries.map((e) {
                     return BarChartGroupData(x: e.key, barRods: [
-                      BarChartRodData(toY: e.value['expense']!, color: AppTheme.expense.withOpacity(.8), width: 12, borderRadius: const BorderRadius.vertical(top: Radius.circular(4))),
-                      BarChartRodData(toY: e.value['income']!, color: AppTheme.income.withOpacity(.8), width: 12, borderRadius: const BorderRadius.vertical(top: Radius.circular(4))),
+                      BarChartRodData(toY: (e.value['expense'] as num).toDouble(), color: AppTheme.expense.withOpacity(.8), width: 12, borderRadius: const BorderRadius.vertical(top: Radius.circular(4))),
+                      BarChartRodData(toY: (e.value['income'] as num).toDouble(), color: AppTheme.income.withOpacity(.8), width: 12, borderRadius: const BorderRadius.vertical(top: Radius.circular(4))),
                     ]);
                   }).toList(),
                   titlesData: FlTitlesData(
